@@ -1,3 +1,5 @@
+Sample project to demonstrate issue at https://github.com/gradle/gradle/issues/3190
+
 `> gradlew test`
 
 Then examine ./build/reports/tests/test/testng-results.xml to see that it contains only partial results
