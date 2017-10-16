@@ -1,0 +1,25 @@
+group 'com.successfactors'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  testCompile group: 'org.testng', name: 'testng', version: '6.9.13.6'
+}
+
+test {
+  useTestNG {
+    useDefaultListeners = true
+  }
+  maxParallelForks = project.gradle.startParameter.maxWorkerCount
+  forkEvery = 10L
+  reports.html.enabled = false
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '4.2'
+}
